@@ -13,6 +13,15 @@ var path = require('path');
 
 var rootdir = process.argv[2];
 
+var api = require('http://ec2-54-165-248-20.compute-1.amazonaws.com:8080/app/api.js')
+
+// routes to api
+app.use('/api',api);
+app.use(express.static(__dirname + '/public'));
+app.get('*', function(req,res) {
+	res.sendFile(__dirname + '/public/app/views/index.html')
+});
+
 function addPlatformBodyTag(indexPath, platform) {
   // add the platform class to the body tag
   try {

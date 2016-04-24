@@ -19,7 +19,6 @@ angular.module('app.routes', [])
   .state('result', {
     url: '/page3',
     templateUrl: 'templates/result.html',
-    controller: 'resultCtrl'
   })
 
 $urlRouterProvider.otherwise('/page1')
